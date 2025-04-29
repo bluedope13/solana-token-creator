@@ -1,10 +1,10 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solana Token Creator</title>
-    <link rel="stylesheet" href="/assets/index.css">
     <script type="module" crossorigin src="/solana-token-creator/assets/index-BUGO30yc.js"></script>
     <link rel="stylesheet" crossorigin href="/solana-token-creator/assets/index-B5PlcfF9.css">
   </head>
@@ -12,3 +12,42 @@
     <div id="root"></div>
   </body>
 </html>
+
+
+// vite.config.js
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  base: '/solana-token-creator/',
+  plugins: [react()],
+});
+
+
+// package.json
+{
+  "name": "solana-token-creator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
+  },
+  "homepage": "https://bluedope13.github.io/solana-token-creator/",
+  "dependencies": {
+    "@metaplex-foundation/mpl-token-metadata": "^2.3.0",
+    "@solana/spl-token": "^0.3.5",
+    "@solana/web3.js": "^1.82.0",
+    "bs58": "^5.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "vite": "^5.0.0",
+    "gh-pages": "^6.0.0"
+  }
+}
